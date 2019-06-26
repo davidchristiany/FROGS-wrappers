@@ -15,4 +15,4 @@ before_install:
 
 
 script:
-  - planemo test --shed_install --engine galaxy ${TRAVIS_BUILD_DIR}/${TESTFOLDER}/workflow_frogs.ga
+  - planemo test --shed_install --engine galaxy ${TRAVIS_BUILD_DIR}/${TESTFOLDER}/workflow_frogs.ga --ignore_dependency_problems
