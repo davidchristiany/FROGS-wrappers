@@ -1,0 +1,17 @@
+install_tool_dependencies: True
+install_repository_dependencies: True
+install_resolver_dependencies: True
+
+tools:
+- name: frogs_3_1_0
+  owner: frogs
+  revisions:
+  - 59bc96331073
+  tool_panel_section_label: Tools from workflows
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
+- name: frogs_3_1_0
+  owner: frogs
+  revisions:
+  - 59bc96331073
+  tool_panel_section_label: Tools from workflows
+  tool_shed_url: https://toolshed.g2.bx.psu.edu

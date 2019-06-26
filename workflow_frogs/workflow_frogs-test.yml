@@ -1,0 +1,101 @@
+---
+- doc: Test sample data for the workflow
+  job:
+    SRA:
+      class: File
+      location: inputs/100spec_90000seq_9samples.tar
+      filetype: tar
+  outputs:
+    #frogs pre process
+    dereplicated:
+      asserts:
+        has_text:
+          text: '>2_64281'
+    count:
+      file: "expected/count.tsv"
+      compare: diff  
+    summary:
+      file: "expected/pre-process_summary.html"
+      compare: "diff"
+    
+    #clustering swarm
+    swarm_seed_file:
+      file: "expected/Clustering_swarm_seed_sequences.fasta"
+      compare: "diff"
+
+    swarm_abundance_biom: 
+      file: "expected/Clustering_swarm_abundance.biom"
+      compare: "diff"
+      lines_diff: 2
+
+    swarm_summary:
+      file: "expected/Clustering_swarm_composition.tsv"
+      compare: "diff"
+
+    #clusters stat
+    clusters_stat_summary:
+      file: "expected/Clusters_stat_summary.html"
+      compare: "diff"
+
+    #Remove chimera 
+    rm_chimera_fasta:
+      file: "expected/Remove_chimera_non_chimera.fasta"
+      compare: "diff"
+
+    rm_chimera_abundance_biom:
+      file: "expected/Remove_chimera_non_chimera_abundance.biom"
+      compare: "sim_size"
+      
+    rm_chimera_summary:
+      file: "expected/Remove_chimera_report.html"
+      compare: "sim_size"
+
+    #filters
+    #filters_output_fasta:
+    #  file: "expected/Filters_sequences.fasta"
+    #  compare: "diff"
+
+    #filters_abundance_biom:
+    #  file: "expected/Filters_abundance.biom"
+    #  compare: "sim_size"
+
+    #filters_excluded:
+    #  file: "expected/Filters_excluded.tsv"
+    #  compare: "diff"
+
+    #filters_summary:
+    #  file: "expected/Filters_report.html"
+    #  compare: "diff"
+    #  lines_diff: "0"
+
+    #Affiliations
+    affiliation_biom:
+      file: "expected/Affiliation_OTU_affiliation.biom"
+      compare: "sim_size"
+
+    affiliation_summary:
+      file: "expected/Affiliation_OTU_report.html"
+      compare: "diff"
+
+    #Affiliations stat
+    affiliation2_html:
+      file: "expected/Affiliations_stat_summary.html"
+      compare: "sim_size"
+
+    #Filters2
+    filters_output_fasta2:
+      file: "expected/Filters_sequences2.fasta"
+      compare: "diff"
+
+    filters_abundance_biom2:
+      file: "expected/Filters_abundance2.biom"
+      compare: "sim_size"
+
+    filters_excluded2:
+      file: "expected/Filters_excluded2.tsv"
+      compare: "diff"
+
+    filters_summary2:
+      file: "expected/Filters_report2.html"
+      compare: "sim_size"
+

@@ -1,0 +1,18 @@
+ This is a special configuration file to run tests on Travis-CI via
+# GitHub notifications when changes are committed.
+#
+# See http://travis-ci.org/ for details
+language: python
+
+env:
+  - TESTFOLDER=workflow_frogs
+
+before_install:
+  - sudo apt-get install -y python-virtualenv
+  - virtualenv planemo-venv
+  - . planemo-venv/bin/activate
+  - pip install planemo==0.59.0
+
+
+script:
+  - planemo test --galaxy_url http://127.0.0.1:8080/ --galaxy_user_key "ae414b6007498c529db4efd8342a2cb5" --no_shed_install --engine external_galaxy workflow_frogs.ga

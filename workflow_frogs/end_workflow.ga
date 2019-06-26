@@ -1,0 +1,260 @@
+{
+  "a_galaxy_workflow": "true",
+  "annotation": "",
+  "format-version": "0.1",
+  "name": "Workflow constructed from history 'end workflow'",
+  "steps": {
+    "0": {
+      "annotation": "",
+      "content_id": null,
+      "errors": null,
+      "id": 0,
+      "input_connections": {},
+      "inputs": [
+        {
+          "description": "",
+          "name": "filter_biom"
+        }
+      ],
+      "label": "filter_biom",
+      "name": "filter_biom",
+      "outputs": [],
+      "position": {
+        "left": 10,
+        "top": 10
+      },
+      "tool_id": null,
+      "tool_state": "{\"name\": \"filter_biom\"}",
+      "tool_version": null,
+      "type": "data_input",
+      "uuid": "99bfa9c6-7f1a-46cb-838c-7b7dc2ae2a2c",
+      "workflow_outputs": []
+    },
+    "1": {
+      "annotation": "",
+      "content_id": null,
+      "errors": null,
+      "id": 1,
+      "input_connections": {},
+      "inputs": [
+        {
+          "description": "",
+          "name": "Filters_sequences"
+        }
+      ],
+      "label": "Filters_sequences",
+      "name": "Filters_sequences",
+      "outputs": [],
+      "position": {
+        "left": 10,
+        "top": 130
+      },
+      "tool_id": null,
+      "tool_state": "{\"name\": \"Filters_sequences\"}",
+      "tool_version": null,
+      "type": "data_input",
+      "uuid": "87255d82-b9f3-4bb6-b2ab-2b4d69c0622a",
+      "workflow_outputs": []
+    },
+    "2": {
+      "annotation": "",
+      "content_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_OTU/3.1",
+      "errors": null,
+      "id": 2,
+      "input_connections": {
+        "biom_abundance": {
+          "id": 0,
+          "output_name": "output"
+        },
+        "fasta_sequences": {
+          "id": 1,
+          "output_name": "output"
+        }
+      },
+      "inputs": [],
+      "label": null,
+      "name": "FROGS Affiliation OTU",
+      "outputs": [
+        {
+          "name": "biom_affiliation",
+          "type": "biom1"
+        },
+        {
+          "name": "summary",
+          "type": "html"
+        }
+      ],
+      "position": {
+        "left": 230,
+        "top": 10
+      },
+      "post_job_actions": {},
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliation_OTU/3.1",
+      "tool_shed_repository": {
+        "changeset_revision": "59bc96331073",
+        "name": "frogs_3_1_0",
+        "owner": "frogs",
+        "tool_shed": "toolshed.g2.bx.psu.edu"
+      },
+      "tool_state": "{\"__page__\": null, \"rdp\": \"\\\"false\\\"\", \"mem\": \"\\\"20\\\"\", \"__rerun_remap_job_id__\": null, \"fasta_sequences\": \"null\", \"__workflow_invocation_uuid__\": \"\\\"c6dca85f972d11e9a8a3d89ef33cc296\\\"\", \"ref_file\": \"\\\"silva132 16S pintail100\\\"\", \"biom_abundance\": \"null\", \"chromInfo\": \"\\\"/home/dchristiany/galaxy_instances/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}",
+      "tool_version": "3.1",
+      "type": "tool",
+      "uuid": "1ac424e4-4b6a-4f9a-a84a-9ff4c1f78597",
+      "workflow_outputs": [
+        {"label": "affiliation_biom","output_name": "biom_affiliation"},
+        {"label": "affiliation_summary","output_name": "summary"}
+      ]
+    },
+    "3": {
+      "annotation": "",
+      "content_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliations_stat/3.1",
+      "errors": null,
+      "id": 3,
+      "input_connections": {
+        "biom": {
+          "id": 2,
+          "output_name": "biom_affiliation"
+        }
+      },
+      "inputs": [],
+      "label": null,
+      "name": "FROGS Affiliations stat",
+      "outputs": [
+        {
+          "name": "summary_file",
+          "type": "html"
+        }
+      ],
+      "position": {
+        "left": 450,
+        "top": 10
+      },
+      "post_job_actions": {},
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_affiliations_stat/3.1",
+      "tool_shed_repository": {
+        "changeset_revision": "59bc96331073",
+        "name": "frogs_3_1_0",
+        "owner": "frogs",
+        "tool_shed": "toolshed.g2.bx.psu.edu"
+      },
+      "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"__workflow_invocation_uuid__\": \"\\\"c6dca85f972d11e9a8a3d89ef33cc296\\\"\", \"biom\": \"null\", \"affiliation\": \"{\\\"__current_case__\\\": 0, \\\"affiliation_type\\\": \\\"FROGS_blast\\\"}\", \"chromInfo\": \"\\\"/home/dchristiany/galaxy_instances/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"rarefaction_ranks\": \"\\\"Class Order Family Genus Species\\\"\"}",
+      "tool_version": "3.1",
+      "type": "tool",
+      "uuid": "c8812a95-b130-438c-8399-6adc3ab07b9d",
+      "workflow_outputs": [
+        {"label": "affiliation2_html","output_name": "summary_file"}
+      ]
+    },
+    "4": {
+      "annotation": "",
+      "content_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_filters/3.1",
+      "errors": null,
+      "id": 4,
+      "input_connections": {
+        "input_biom": {
+          "id": 2,
+          "output_name": "biom_affiliation"
+        },
+        "input_fasta": {
+          "id": 1,
+          "output_name": "output"
+        }
+      },
+      "inputs": [],
+      "label": null,
+      "name": "FROGS Filters",
+      "outputs": [
+        {
+          "name": "output_fasta",
+          "type": "fasta"
+        },
+        {
+          "name": "output_biom",
+          "type": "biom1"
+        },
+        {
+          "name": "output_excluded",
+          "type": "tabular"
+        },
+        {
+          "name": "output_summary",
+          "type": "html"
+        }
+      ],
+      "position": {
+        "left": 450,
+        "top": 130
+      },
+      "post_job_actions": {},
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_filters/3.1",
+      "tool_shed_repository": {
+        "changeset_revision": "59bc96331073",
+        "name": "frogs_3_1_0",
+        "owner": "frogs",
+        "tool_shed": "toolshed.g2.bx.psu.edu"
+      },
+      "tool_state": "{\"input_fasta\": \"null\", \"blast_filters\": \"{\\\"__current_case__\\\": 1, \\\"blast_filters_areApplied\\\": \\\"yes\\\", \\\"max_blast_evalue\\\": \\\"\\\", \\\"min_blast_coverage\\\": \\\"1.0\\\", \\\"min_blast_identity\\\": \\\"1.0\\\", \\\"min_blast_length\\\": \\\"\\\"}\", \"__page__\": null, \"RDP_filters\": \"{\\\"RDP_filters_areApplied\\\": \\\"no\\\", \\\"__current_case__\\\": 0}\", \"input_biom\": \"null\", \"contaminations_filter\": \"{\\\"__current_case__\\\": 0, \\\"contaminations_filter_isApplied\\\": \\\"no\\\"}\", \"__workflow_invocation_uuid__\": \"\\\"c6dca85f972d11e9a8a3d89ef33cc296\\\"\", \"chromInfo\": \"\\\"/home/dchristiany/galaxy_instances/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"abundance_filters\": \"{\\\"__current_case__\\\": 0, \\\"abundance_filters_areApplied\\\": \\\"no\\\"}\", \"__rerun_remap_job_id__\": null}",
+      "tool_version": "3.1",
+      "type": "tool",
+      "uuid": "dc0dec62-5a9c-4b18-b2aa-4d49806b15a9",
+      "workflow_outputs": [
+        {"label": "filters_output_fasta2","output_name": "output_fasta"},
+        {"label": "filters_abundance_biom2","output_name": "output_biom"},
+        {"label": "filters_excluded2","output_name": "output_excluded"},
+        {"label": "filters_summary2","output_name": "output_summary"}
+      ]
+    },
+    "5": {
+      "annotation": "",
+      "content_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1",
+      "errors": null,
+      "id": 5,
+      "input_connections": {
+        "biomfile": {
+          "id": 4,
+          "output_name": "output_biom"
+        },
+        "input_otu": {
+          "id": 4,
+          "output_name": "output_fasta"
+        }
+      },
+      "inputs": [],
+      "label": null,
+      "name": "FROGS Tree",
+      "outputs": [
+        {
+          "name": "out_tree",
+          "type": "nhx"
+        },
+        {
+          "name": "html",
+          "type": "html"
+        }
+      ],
+      "position": {
+        "left": 670,
+        "top": 10
+      },
+      "post_job_actions": {},
+      "tool_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1",
+      "tool_shed_repository": {
+        "changeset_revision": "59bc96331073",
+        "name": "frogs_3_1_0",
+        "owner": "frogs",
+        "tool_shed": "toolshed.g2.bx.psu.edu"
+      },
+      "tool_state": "{\"__page__\": null, \"biomfile\": \"null\", \"input_otu\": \"null\", \"__rerun_remap_job_id__\": null, \"__workflow_invocation_uuid__\": \"\\\"c6dca85f972d11e9a8a3d89ef33cc296\\\"\", \"chromInfo\": \"\\\"/home/dchristiany/galaxy_instances/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}",
+      "tool_version": "3.1",
+      "type": "tool",
+      "uuid": "b38b71bc-75c4-48bf-a150-73db8a615b09",
+      "workflow_outputs": [
+        {"label": "newick_tree","output_name": "out_tree"},
+        {"label": "tree_html","output_name": "html"}
+      ]
+    }
+  },
+  "tags": [],
+  "uuid": "bd2de3e9-7516-4e79-aa4b-0a60a6fd45a6",
+  "version": 0
+}

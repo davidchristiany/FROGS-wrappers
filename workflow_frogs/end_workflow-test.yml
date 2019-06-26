@@ -1,0 +1,51 @@
+---
+- doc: Test sample data for the workflow
+  job:
+    filter_biom:
+      class: File
+      location: inputs/Filters_abundance.biom
+      filetype: fasta
+    Filters_sequences:
+      class: File
+      location: inputs/Filters_sequences.fasta
+      filetype: biom1
+  outputs:    
+    #Affiliations
+    affiliation_biom:
+      file: "expected/Affiliation_OTU_affiliation.biom"
+      compare: "sim_size"
+
+    affiliation_summary:
+      file: "expected/Affiliation_OTU_report.html"
+      compare: "diff"
+
+    affiliation2_html:
+      file: "expected/Affiliations_stat_summary.html"
+      compare: "diff"
+      lines_diff: 2
+
+    #Filters2
+    filters_output_fasta2:
+      file: "expected/Filters_sequences2.fasta"
+      compare: "diff"
+
+    filters_abundance_biom2:
+      file: "expected/Filters_abundance2.biom"
+      compare: "sim_size"
+
+    filters_excluded2:
+      file: "expected/Filters_excluded2.tsv"
+      compare: "diff"
+
+    filters_summary2:
+      file: "expected/Filters_report2.html"
+      compare: "diff"
+
+    #Tree
+    newick_tree:
+      file: expected/tree.nhx
+      compare: diff
+    
+    tree_html:
+      file: "expected/Tree_summary_end_wf.html"
+      compare: "diff"
