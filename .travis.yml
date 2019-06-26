@@ -1,4 +1,4 @@
- This is a special configuration file to run tests on Travis-CI via
+#This is a special configuration file to run tests on Travis-CI via
 # GitHub notifications when changes are committed.
 #
 # See http://travis-ci.org/ for details
