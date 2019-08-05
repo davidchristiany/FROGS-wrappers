@@ -15,4 +15,4 @@ before_install:
 
 
 script:
-  - planemo test --galaxy_url http://migale.jouy.inra.fr/galaxy/ --galaxy_user_key "a46f83141f53195fc8640e13b6a1c2c7" --no_shed_install --engine external_galaxy ${TRAVIS_BUILD_DIR}/${TESTFOLDER}/workflow_frogs.ga
+  - planemo test --shed_install --engine galaxy ${TRAVIS_BUILD_DIR}/${TESTFOLDER}/workflow_frogs.ga --ignore_dependency_problems
