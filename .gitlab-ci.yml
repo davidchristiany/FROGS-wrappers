@@ -1,0 +1,12 @@
+image: "python:3.6"
+
+before_script:
+  - sudo apt-get install -y python-virtualenv
+  - virtualenv planemo-venv
+  - . planemo-venv/bin/activate
+  - pip install planemo==0.59.0
+
+wf_test:
+  script:
+    - planemo test --galaxy_url http://138.102.144.93 --galaxy_user_key "5da80f57584b5c6df225a45479aae519" --no_shed_install --engine external_galaxy workflow_frogs/workflow_frogs.ga
+
