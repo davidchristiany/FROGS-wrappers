@@ -1,12 +1,8 @@
-image: "python:3.6"
+image: docker:19.03.1
 
 before_script:
-  - sudo apt-get install -y python-virtualenv
-  - virtualenv planemo-venv
-  - . planemo-venv/bin/activate
-  - pip install planemo==0.59.0
+  - docker info
 
-wf_test:
+run_test:
   script:
-    - planemo test --galaxy_url http://138.102.144.93 --galaxy_user_key "5da80f57584b5c6df225a45479aae519" --no_shed_install --engine external_galaxy workflow_frogs/workflow_frogs.ga
-
+  - docker run -v workflow_frogs:/workflow_frogs bgruening/planemo test --galaxy_url http://138.102.144.93/ --galaxy_user_key "5da80f57584b5c6df225a45479aae519" --no_shed_install --engine /workflow_frogs/workflow_frogs.ga
