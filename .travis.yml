@@ -1,14 +1,11 @@
 language: ruby
 
-before_install: gem install bundler --pre
-
 services:
  - docker
 
 before_script:
  - docker pull bgruening/planemo
- - echo $TRAVIS_BUILD_DIR
- - pwd
+ - cd project
 
 script:
  - docker run -v $TRAVIS_BUILD_DIR/workflow_frogs:/workflow_frogs bgruening/planemo test --galaxy_url http://138.102.144.93/ --galaxy_user_key "5da80f57584b5c6df225a45479aae519" --no_shed_install --engine external_galaxy workflow_frogs/workflow_frogs.ga
