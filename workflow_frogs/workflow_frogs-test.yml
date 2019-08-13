@@ -14,9 +14,9 @@
     count:
       file: "expected/count.tsv"
       compare: diff  
-    summary:
-      file: "expected/pre-process_summary.html"
-      compare: "diff"
+    #summary:
+    #  file: "expected/pre-process_summary.html"
+    #  compare: "sim_size"
     
     #clustering swarm
     swarm_seed_file:
@@ -46,9 +46,9 @@
       file: "expected/Remove_chimera_non_chimera_abundance.biom"
       compare: "sim_size"
       
-    rm_chimera_summary:
-      file: "expected/Remove_chimera_report.html"
-      compare: "sim_size"
+    #rm_chimera_summary:
+    #  file: "expected/Remove_chimera_report.html"
+    #  compare: "sim_size"
 
     #filters
     #filters_output_fasta:
