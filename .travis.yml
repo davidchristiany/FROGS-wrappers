@@ -3,6 +3,9 @@ language: ruby
 services:
  - docker
 
+install:
+ - gem install travis
+
 before_script:
  - travis encrypt GXYPROD_API_KEY="5da80f57584b5c6df225a45479aae519" --add
  - docker pull bgruening/planemo
