@@ -450,55 +450,6 @@
           {"label": "filters_excluded2","output_name": "output_excluded"},
           {"label": "filters_summary2","output_name": "output_summary"}
         ]
-      },
-      "9": {
-        "annotation": "",
-        "content_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1",
-        "errors": null,
-        "id": 9,
-        "input_connections": {
-          "biomfile": {
-            "id": 8,
-            "output_name": "output_biom"
-          },
-          "input_otu": {
-            "id": 8,
-            "output_name": "output_fasta"
-          }
-        },
-        "inputs": [],
-        "label": null,
-        "name": "FROGS Tree",
-        "outputs": [
-          {
-            "name": "out_tree",
-            "type": "nhx"
-          },
-          {
-            "name": "html",
-            "type": "html"
-          }
-        ],
-        "position": {
-          "left": 1550,
-          "top": 10
-        },
-        "post_job_actions": {},
-        "tool_id": "toolshed.g2.bx.psu.edu/repos/frogs/frogs_3_1_0/FROGS_Tree/3.1",
-        "tool_shed_repository": {
-          "changeset_revision": "59bc96331073",
-          "name": "frogs_3_1_0",
-          "owner": "frogs",
-          "tool_shed": "toolshed.g2.bx.psu.edu"
-        },
-        "tool_state": "{\"__page__\": null, \"biomfile\": \"null\", \"input_otu\": \"null\", \"__rerun_remap_job_id__\": null, \"__workflow_invocation_uuid__\": \"\\\"c4219ba2883b11e9a515fe56ecc5ce29\\\"\", \"chromInfo\": \"\\\"/projet/galaxyprod/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}",
-        "tool_version": "3.1",
-        "type": "tool",
-        "uuid": "354ba288-3fa5-4854-8511-6d1bc7c3d96f",
-        "workflow_outputs": [
-          {"label": "newick_tree","output_name": "out_tree"},
-          {"label": "tree_html","output_name": "html"}
-        ]
       }
   },
   "tags": [],
